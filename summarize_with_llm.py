@@ -2,8 +2,8 @@ import torch
 # https://huggingface.co/prithivMLmods/Llama-Express.1-Tiny
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-# Path to your local model directory
-model_path = "prithivMLmods/Llama-Express.1-Tiny"
+# Path to your local model directory, this is just informational
+# model_path = "prithivMLmods/Llama-Express.1-Tiny"
 
 import PyPDF2
 from transformers import pipeline
@@ -16,6 +16,7 @@ for page in reader.pages:
 text += page.extract_text()
 return text
 
+#identify the PDF to interrogate and then ingest/extract
 pdf_path = "/home/company/contract.pdf"
 contract_text = extract_text_from_pdf(pdf_path)
 
