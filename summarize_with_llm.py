@@ -29,7 +29,7 @@ device_map="cuda",
 messages = [
 {"role": "system", "content": "You are a lawyer."},
 {"role": "user", "content": f"""
-Could you summarize the following document, emphasizing legal points being made:
+Could you summarize the following document, emphasizing legal points being made among the parties involved:
 
 Text: {contract_text}
 """
