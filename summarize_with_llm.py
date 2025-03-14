@@ -20,7 +20,10 @@ def extract_text_from_pdf(pdf_path):
 pdf_path = "/home/company/contract.pdf"
 contract_text = extract_text_from_pdf(pdf_path)
 
+# there a lots of LLMs on Hugging face so I just picked one that kinda worked but mainly smaller this example
 model_id = "prithivMLmods/Llama-Express.1-Tiny"
+
+# setup the pipeline
 pipe = pipeline(
   "text-generation",
   model=model_id,
@@ -28,8 +31,8 @@ pipe = pipeline(
   device_map="cuda",
 )
 messages = [
-  {"role": "system", "content": "You are a lawyer."},
-  {"role": "user", "content": f"""
+  {"role": "system", "content": "You are a lawyer."}, #define the characteristic of the responder or system role and define the prompt with the user role
+  {"role": "user", "content": f""" 
     Could you summarize the following document, emphasizing legal points being made among the parties involved:
 
     Text: {contract_text}
@@ -41,6 +44,8 @@ outputs = pipe(
   messages,
   max_new_tokens=256,
 )
+
+#print out the response
 print(outputs[0]["generated_text"][-1])
 
 # not pretty but simply write out to text file - todo make this more stylish or to PDF template
