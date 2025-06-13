@@ -2,7 +2,7 @@
 
 ---
 
-This project provides a Python script to extract text from PDF documents and then leverage a large language model (LLM) to summarize the content, with a specific focus on legal points. It uses the `transformers` library by Hugging Face and the `prithivMLmods/Llama-Express.1-Tiny` model for efficient local processing.
+This project provides a Python script to extract text from PDF documents and then leverage a large language model (LLM) to summarize the content, with a specific focus on legal points. It uses the `transformers` library by Hugging Face and the `prithivMLmods/Llama-Express.1-Tiny` model for efficient local processing.  Please note I did not include the variation in which the LLM was trained on legal expertise (but I should).
 
 ---
 ## Features
